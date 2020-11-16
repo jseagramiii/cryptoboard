@@ -6,7 +6,7 @@ import News from './News'
 
 const App = () => {
   const apiKey = process.env.REACT_APP_API_KEY
-  const [cryptoData, setCryptoData] = useState({price: {}, signal: {}, news: {}})
+  const [cryptoData, setCryptoData] = useState({price: {}, signal: {}, news: []})
   
   useEffect(() => {
     const getCryptoData = async () => {
@@ -16,12 +16,12 @@ const App = () => {
       
       const resNews = await axios.get(`https://min-api.cryptocompare.com/data/v2/news/?api_key=${apiKey}&feeds=cryptocompare,cointelegraph,coindesk`)
 
-      setCryptoData({price: resPrice.data, signal: resSignal.data, news: resNews.data })
+      setCryptoData({price: resPrice.data, signal: resSignal.data, news: resNews.data.Data })
   
     }
     getCryptoData()
   }, [])
-  console.log(cryptoData)
+  console.log(cryptoData.news)
 
   return (
     <div className="App">
@@ -29,12 +29,7 @@ const App = () => {
       price={cryptoData.price} 
       signal={cryptoData.signal}
       />
-      {/* {cryptoData.news.Data.map((article, index) => (
-        <div key={index}>
-          <img src={imageurl} alt="crypto"/>
-        </div>
-        
-      ))} */}
+      <News news={cryptoData.news} />
     </div>
   );
 }

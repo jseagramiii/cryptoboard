@@ -1,12 +1,14 @@
 import React from 'react'
 
-const NewsArticle = ({news}) => {
+const NewsArticle = ({article}) => {
     return (
         <div>
-            <h1>hello</h1>
-            {/* {news.Data.map((article, index) => (
-                <span key={index}>{article[index].guid}</span>
-            ))} */}
+            <h3><em>{article.title}</em></h3>
+            <h4>Source - <strong>{article.source}</strong></h4>
+            <a href={article.guid}>{article.guid}</a>
+            <span><img src={article.imageurl} alt="article"/></span>
+            <span style={{fontSize: '2em'}}>{article.body}</span>
+            <hr/>
         </div>
     )
 }
