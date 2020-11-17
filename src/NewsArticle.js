@@ -4,13 +4,15 @@ const NewsArticle = ({article}) => {
 
     return (
         <div className='article'>
-            <hr/>
             <a href={article.url}>
-                <h2><em>{article.title}</em></h2>
+                <h3><em>{article.title}</em></h3>
+            </a>
+            <p><em>"{article.body}"</em></p>  
+            <a href={article.url}>
+                <span><img style={{maxWidth: '15em'}} src={article.imageurl} alt="article"/></span>
             </a>
             <h4>Source - {article.source}</h4>
-            <span><img style={{maxWidth: '10em'}} src={article.imageurl} alt="article"/></span>
-            <span style={{fontSize: '1em'}}><p>"{article.body}"</p></span>   
+            <hr/>
         </div>
     )
 }

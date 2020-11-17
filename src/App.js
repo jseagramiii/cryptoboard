@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios'
 import CryptoPrices from './CryptoPrices'
 import News from './News'
+import TradingSignal from './TradingSignal';
 
 const App = () => {
   const apiKey = process.env.REACT_APP_API_KEY
@@ -24,13 +25,17 @@ const App = () => {
   console.log(cryptoData.signal.inOutVar)
 
   return (
-    <div className="App">
-      <CryptoPrices  
-        price={cryptoData.price} 
-        signal={cryptoData.signal}
-      />
-      <News news={cryptoData.news} />
+    <div className="App row">
+      <div className='column'>
+        <CryptoPrices price={cryptoData.price} />
+        <TradingSignal signal={cryptoData.signal}  />
+      </div>
+      <div className='column'>
+        <h1 style={{textAlign: 'center'}}>News Feed</h1>
+        <News news={cryptoData.news} />
+      </div>
     </div>
+    
   );
 }
 

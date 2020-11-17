@@ -1,22 +1,59 @@
 body {
-  background: rgb(25, 70, 139);
   background: linear-gradient(
     45deg,
     rgba(25, 70, 139, 1) 0%,
-    rgba(17, 110, 164, 1) 25%,
-    rgba(17, 114, 164, 1) 27%,
+    rgb(17, 164, 108) 25%,
+    rgb(18, 22, 24) 27%,
     rgb(39, 146, 116) 97%
   );
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
   color: whitesmoke;
 }
+
+.app {
+  max-height: fit-content;
+}
+
 a {
   color: inherit;
 }
 
+.scroll {
+  max-height: 50em;
+  overflow-y: scroll;
+  margin-bottom: 4em;
+  padding: 1em;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  height: fit-content;
+}
+
 .prices-container {
+  width: 22em;
+  font-size: 0.5em;
   display: inline-block;
-  margin: 1em;
-  background-color: rgba(60, 156, 201, 0.4);
+  text-align: center;
+  margin: 0.5em 1em 0.5em 1em;
+  padding: 0.5em;
+  background-color: rgba(9, 148, 79, 0.8);
   box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.news {
+  background-color: rgba(3, 7, 4, 0.4);
+
+  border: 2px solid black;
+  border-radius: 0.5em;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+
+hr {
+  color: black;
 }
