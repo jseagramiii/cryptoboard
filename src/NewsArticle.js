@@ -1,14 +1,16 @@
 import React from 'react'
 
 const NewsArticle = ({article}) => {
+
     return (
-        <div>
-            <h3><em>{article.title}</em></h3>
-            <h4>Source - <strong>{article.source}</strong></h4>
-            <a href={article.guid}>{article.guid}</a>
-            <span><img src={article.imageurl} alt="article"/></span>
-            <span style={{fontSize: '2em'}}>{article.body}</span>
+        <div className='article'>
             <hr/>
+            <a href={article.url}>
+                <h2><em>{article.title}</em></h2>
+            </a>
+            <h4>Source - {article.source}</h4>
+            <span><img style={{maxWidth: '10em'}} src={article.imageurl} alt="article"/></span>
+            <span style={{fontSize: '1em'}}><p>"{article.body}"</p></span>   
         </div>
     )
 }

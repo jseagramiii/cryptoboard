@@ -16,18 +16,18 @@ const App = () => {
       
       const resNews = await axios.get(`https://min-api.cryptocompare.com/data/v2/news/?api_key=${apiKey}&feeds=cryptocompare,cointelegraph,coindesk`)
 
-      setCryptoData({price: resPrice.data, signal: resSignal.data, news: resNews.data.Data })
+      setCryptoData({price: resPrice.data, signal: resSignal.data.Data, news: resNews.data.Data })
   
     }
     getCryptoData()
   }, [])
-  console.log(cryptoData.news)
+  console.log(cryptoData.signal.inOutVar)
 
   return (
     <div className="App">
       <CryptoPrices  
-      price={cryptoData.price} 
-      signal={cryptoData.signal}
+        price={cryptoData.price} 
+        signal={cryptoData.signal}
       />
       <News news={cryptoData.news} />
     </div>
