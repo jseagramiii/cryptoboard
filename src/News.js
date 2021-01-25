@@ -5,7 +5,7 @@ import NewsArticle from './NewsArticle'
 const News = ({ news }) => {
   return (
     <div className='scroll news'>
-      {news.slice(0, 15).map((article) => (
+      {news.slice(0, 10).map((article) => (
         <NewsArticle key={article.id} article={article} />
       ))}
     </div>
