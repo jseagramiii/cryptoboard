@@ -13,7 +13,7 @@ const CryptoPrices = ({ price }) => {
       {Object.keys(price).map((key, index) => (
         <div className='prices-container' key={key}>
           <img
-            style={{ marginRight: '1em' }}
+            style={{ marginRight: '1em', paddingTop: '1.5em' }}
             src={cryptpoPics[index]}
             alt='coin'
           />
@@ -28,6 +28,7 @@ const CryptoPrices = ({ price }) => {
 
 const style = {
   fontSize: '3.2em',
+  padding: '.1em',
 }
 
 export default CryptoPrices
